@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoAccess - Espaços ao ar livre para todas as habilidades</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#conteudo-principal" class="pular-conteudo">Pular para o conteúdo principal</a>
+
+  <header class="cabecalho">
+    <div class="container cabecalho-flex">
+      <div class="marca">
+        <div class="logo-titulo">
+          <svg class="icone-folha" aria-hidden="true" viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+            <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8Z"/>
+          </svg>
+          <h1>EcoAccess</h1>
+        </div>
+        <p class="slogan">Espaços ao ar livre para todas as habilidades</p>
+      </div>
+
+      <div class="controles-acessibilidade">
+        <div class="grupo-botoes-topo">
+          <button id="btn-voiceover" type="button" class="btn-secundario">
+            Voice Over
+          </button>
+          <button id="btn-contraste" type="button" aria-pressed="false" class="btn-secundario">
+            Alto Contraste
+          </button>
+        </div>
+        
+        <div id="aviso-voiceover" class="aviso-warning" role="status" hidden>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+          </svg>
+          <span>Em desenvolvimento</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" class="container">
+    <section class="secao-busca" aria-labelledby="titulo-filtros">
+      <h2 id="titulo-filtros">Encontre um espaço ideal para você</h2>
+      
+      <div class="campo-pesquisa">
+        <label for="input-busca">Buscar por nome, bairro ou zona:</label>
+        <input type="text" id="input-busca" placeholder="Ex: Villa-Lobos, Zona Leste, Tatuapé, Ipiranga...">
+      </div>
+
+      <fieldset class="grupo-filtros">
+        <legend>Selecione suas necessidades de acessibilidade:</legend>
+        <div class="opcoes-checkbox">
+          <label class="checkbox-card">
+            <input type="checkbox" value="mobilidade" class="filtro-check">
+            <span>Mobilidade Reduzida / Cadeirante</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" value="visual" class="filtro-check">
+            <span>Deficiência Visual</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" value="auditiva" class="filtro-check">
+            <span>Deficiência Auditiva</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" value="neurodivergente" class="filtro-check">
+            <span>Neurodivergência / Autismo</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="acoes-filtro">
+        <button type="button" id="btn-limpar" class="btn-texto">Limpar filtros</button>
+        <p id="contador-resultados" aria-live="polite" class="status-busca"></p>
+      </div>
+    </section>
+
+    <section class="secao-resultados" aria-label="Lista de locais disponíveis">
+      <div id="grid-parques" class="grid-parques"></div>
+    </section>
+  </main>
+
+  <dialog id="modal-detalhes" class="modal" aria-labelledby="modal-titulo">
+    <div class="modal-conteudo">
+      <button type="button" id="btn-fechar-modal" class="btn-fechar" aria-label="Fechar detalhes">
+        &times;
+      </button>
+      <div id="modal-corpo"></div>
+    </div>
+  </dialog>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>Samuel Gutierrez &copy; 2026 - Planejamento seguro e autônomo ao ar livre.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
